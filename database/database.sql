@@ -1,13 +1,9 @@
 CREATE TABLE user_usr (
+	id_usr varchar NOT NULL,
 	email varchar NOT NULL,
 	"name" varchar NOT NULL,
-	"password" varchar NOT NULL,
-	CONSTRAINT user_pk PRIMARY KEY (email)
+	pasword varchar NOT NULL,
+	CONSTRAINT user_usr_pk PRIMARY KEY (id_usr)
 );
-
-CREATE TABLE user_contacts_uc (
-	email_usr varchar NOT NULL,
-	email_contact varchar NOT NULL,
-	CONSTRAINT user_contacts_uc_unique UNIQUE (email_usr,email_contact)
-);
-CREATE INDEX user_contacts_uc_email_usr_idx ON user_contacts_uc (email_usr);
+CREATE INDEX user_usr_name_idx ON user_usr ("name");
+CREATE UNIQUE INDEX user_usr_email_idx ON user_usr (email);

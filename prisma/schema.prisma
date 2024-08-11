@@ -1,0 +1,20 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../node_modules/@prisma/client/user_db"
+  previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+  name            = "user_db"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user_usr {
+  id_usr  String @id(map: "user_usr_pk") @db.VarChar
+  email   String @unique(map: "user_usr_email_idx") @db.VarChar
+  name    String @db.VarChar
+  pasword String @db.VarChar
+
+  @@index([name])
+}
