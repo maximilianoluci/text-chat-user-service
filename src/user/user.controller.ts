@@ -7,12 +7,13 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  getUser(): string {
-    return this.userService.getUser();
+  public get() {
+    return this.userService.get();
   }
 
   @Post()
-  createUser(@Body() userDto: UserDto): string {
-    return this.userService.createUser(userDto);
+  public create(@Body() userDto: UserDto) {
+    console.log(userDto);
+    return this.userService.create(userDto);
   }
 }

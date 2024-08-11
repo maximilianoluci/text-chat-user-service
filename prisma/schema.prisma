@@ -10,11 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user_usr {
-  id_usr  String @id(map: "user_usr_pk") @db.VarChar
-  email   String @unique(map: "user_usr_email_idx") @db.VarChar
-  name    String @db.VarChar
-  pasword String @db.VarChar
+model User {
+  id_usr   String @id(map: "user_usr_pk") @db.VarChar
+  email    String @unique(map: "user_usr_email_idx") @db.VarChar
+  name     String @db.VarChar
+  password String @db.VarChar
 
   @@index([name])
 }
