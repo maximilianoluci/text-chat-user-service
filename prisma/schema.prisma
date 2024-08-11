@@ -1,8 +1,8 @@
 generator client {
-  provider        = "prisma-client-js"
-  output          = "../node_modules/@prisma/client/user_db"
-  previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
   name            = "user_db"
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+  output          = "../node_modules/@prisma/client/user_db"
 }
 
 datasource db {
